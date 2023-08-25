@@ -10,9 +10,23 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+      h1 {
+        font-family: "Sedgwick Ave Display", cursive;
+        color: paleturquoise;
+      }
+      body {
+        background-color: ghostwhite;
+      }
+      nav > div {
+        background-color: rgb(200, 211, 222);
+        padding-block: 10px;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary py-0">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">STORE</a>
         <button
@@ -38,11 +52,11 @@
         </div>
       </div>
     </nav>
-    <h1 class="display-md-3 display-1 mt-3 mb-5 ms-md-5 ms-2 text-info">PRODUCTS</h1>
+    <h1 class="display-md-3 display-1 mt-5 mb-5 ms-md-5 ms-2">PRODUCTS</h1>
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="tabella">
         <div class="d-flex justify-content-center w-100">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>

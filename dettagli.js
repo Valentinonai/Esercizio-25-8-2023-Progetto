@@ -17,12 +17,12 @@ window.addEventListener("DOMContentLoaded", () => {
 const creaItem = (item) => {
   const container = document.getElementById("container");
   container.innerHTML = `
-  <img src="${item.imageUrl}" alt="img" style='width:500px' class="mt-5 mb-3">
-    <h1 class="display-3">${item.name}</h1>
-    <h3>${item.brand}</h3>
-    <p>${item.description}</p>
-    <p>Prezzo: ${item.price}€</p>
-         <button type="button" class="btn btn-success" onclick="window.location.assign('./BackOffice.html?id=${item._id}')">Modifica</button>
+  <img src="${item.imageUrl}" alt="img" style='width:500px' class="mt-5 mb-3 shadow rounded">
+    <h1 class="display-3 text-white align-self-start" >${item.name}</h1>
+    <h3 class="text-black align-self-start">${item.brand}</h3>
+    <p class="text-black align-self-start">${item.description}</p>
+    <p class="text-black align-self-end">Prezzo: ${item.price}€</p>
+         <button type="button" class="btn btn-success align-self-start" style="width:100px" onclick="window.location.assign('./BackOffice.html?id=${item._id}')">Modifica</button>
 
 </div>`;
 };
