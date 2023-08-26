@@ -55,6 +55,7 @@ const creaNuovoOggetto = async (event) => {
     document.getElementById("alert").innerHTML = `<div class="alert alert-success" role="alert">
 Elemento Creato con successo!!!!!!!
 </div>`;
+    timer();
     if (!risp.ok) {
       if (risp.status === 404) {
         throw new Error("Not Found 404");
@@ -70,6 +71,7 @@ Elemento Creato con successo!!!!!!!
     document.getElementById("alert").innerHTML = `<div class="alert alert-danger" role="alert">
  ${error}
         </div>`;
+    timer();
   }
 };
 
@@ -108,6 +110,7 @@ const modificaItem = async (event, id) => {
     document.getElementById("alert").innerHTML = `<div class="alert alert-success" role="alert">
     Elemento Modificato con successo!!!!!!!
     </div>`;
+    timer();
     if (!risp.ok) {
       if (risp.status === 404) {
         throw new Error("Not Found 404");
@@ -123,6 +126,7 @@ const modificaItem = async (event, id) => {
     document.getElementById("alert").innerHTML = `<div class="alert alert-danger" role="alert">
 ${error}
     </div>`;
+    timer();
   }
 };
 
@@ -138,6 +142,7 @@ const deleteItem = async (id) => {
     document.getElementById("alert").innerHTML = `<div class="alert alert-danger" role="alert">
             Elemento Eliminato!!!!!
             </div>`;
+    timer();
     if (!risp.ok) {
       if (risp.status === 404) {
         throw new Error("Not Found 404");
@@ -153,5 +158,22 @@ const deleteItem = async (id) => {
     document.getElementById("alert").innerHTML = `<div class="alert alert-danger" role="alert">
     ${error}
         </div>`;
+    timer();
   }
+};
+
+const timer = () => {
+  const alert = document.getElementById("alert");
+  let cont = 5;
+  const div = document.createElement("div");
+  alert.appendChild(div);
+  div.innerHTML = `<h6>Torno alla home in  ${cont}s</h6>`;
+  const x = setInterval(() => {
+    cont--;
+    div.innerHTML = `<h6>Torno alla home in  ${cont}s</h6>`;
+    if (cont === 0) {
+      clearInterval(x);
+      window.location.assign("./index.html");
+    }
+  }, 1000);
 };
